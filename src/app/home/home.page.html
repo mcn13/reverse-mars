@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Rover to mars
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,12 +9,25 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Rover to mars</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <input id="width" name="width" [(ngModel)]="width" type="number" min="0" max="999" value="100">
+<input id="heigth" name="height" [(ngModel)]="height" type="number" min="0" max="999" value="100">
+
+
+<p>Width: {{width}} Height: {{height}}</p>
+
+
+<div id="square" [style.width]='getWidth()' [style.height]='getHeight()'>
+
+
+
+  <app-rover [orientacion]='orientacion' [style.position]='"absolute"' [style.left]='getLeft()' [style.bottom]='getBottom()'>
+
+  </app-rover>
+</div>
+
+
 </ion-content>
